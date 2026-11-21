@@ -1,0 +1,362 @@
+# Transform: API reference
+
+Moves, rotates, scales, mirrors and fades the image in one go
+
+[See how to use it on the site](./README.md)
+
+| Endpoint | Cost |
+| --- | --- |
+| `POST /v1/modules/transform` | 1 credit per file |
+
+## Files
+
+| Field | Required | Formats | Description |
+| --- | --- | --- | --- |
+| `in` (One image or several) | yes | `PNG`, `JPEG`, `WebP`, `GIF`, `AVIF`, `BMP` | **Image(s)**<br />Image to transform. |
+
+## Settings
+
+### Position
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `x` | `number` | `0` | min -100 % · max 100 % · step 0.1 | **X**<br />Horizontal offset, in % of the width. |
+| `y` | `number` | `0` | min -100 % · max 100 % · step 0.1 | **Y**<br />Vertical offset, in % of the height. |
+
+### Scale
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `scale` | `number` | `100` | min 0 % · max 400 % · step 0.1 | **Scale**<br />Image scale, on both axes. |
+
+#### Non-uniform scale
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `scaleX` | `number` | `100` | min 0 % · max 400 % · step 0.1 | **X**<br />Horizontal scale, on top of the overall scale. |
+| `scaleY` | `number` | `100` | min 0 % · max 400 % · step 0.1 | **Y**<br />Vertical scale, on top of the overall scale. |
+
+### Rotation
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `rotation` | `number` | `0` | min -360 ° · max 360 ° · step 0.1 | **Rotation**<br />Rotation angle around the axis, in degrees. |
+
+### Axis
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `anchor` | `string`<br />*Anchor* | `"center"` | [grid below](#anchor-anchor) | **Axis**<br />Point the image rotates, scales and mirrors around.<br />*Anchor* : Point of a 3 × 3 grid, from the top-left to the bottom-right corner. |
+
+<a name="anchor-anchor"></a>
+
+**Positions of `anchor`**
+
+| | Left | Center | Right |
+| --- | --- | --- | --- |
+| **Top** | `top-left`<br />Top left | `top`<br />Top | `top-right`<br />Top right |
+| **Middle** | `left`<br />Left | **`center`**<br />**Center** | `right`<br />Right |
+| **Bottom** | `bottom-left`<br />Bottom left | `bottom`<br />Bottom | `bottom-right`<br />Bottom right |
+
+### Mirror
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `mirror` | `string` | `"none"` | `none` None : The image keeps its orientation.<br />`h` Horizontal : Flips the image left to right.<br />`v` Vertical : Flips the image top to bottom.<br />`both` Both : Flips the image on both axes. | **Mirror**<br />Flipping of the image around the axis. |
+
+### Opacity
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `opacity` | `number` | `100` | min 0 % · max 100 % · step 1 | **Opacity**<br />Opacity of the transformed image. |
+
+### Size
+
+| Setting | Type | Default | Allowed values | Description |
+| --- | --- | --- | --- | --- |
+| `frameMethod` | `string` | `"module"` | `module` Module : The module grows or shrinks the image to fit what it produces.<br />`source` Source : The output keeps the size of the incoming image.<br />`custom` Custom : The output takes the chosen width and height. | **Method**<br />Where the output size comes from. |
+| `frameWidth` | `number` |  | min 1 px · max 16384 px | **Width**<br />Output width, in pixels.<br />*Applies when `frameMethod` = `custom` (Custom).* |
+| `frameHeight` | `number` |  | min 1 px · max 16384 px | **Height**<br />Output height, in pixels.<br />*Applies when `frameMethod` = `custom` (Custom).* |
+| `frameFit` | `string` | `"none"` | `none` None (crop) : The output keeps its scale and is cropped.<br />`contain` Contain : The whole output fits in the size.<br />`cover` Cover : The output fills the size, even if it overflows.<br />`stretch` Stretch : The output stretches to the size, ignoring its proportions. | **Fit**<br />How the output is placed in the imposed size.<br />*Applies when `frameMethod` = `source` (Source) or `custom` (Custom).* |
+| `frameAnchor` | `string`<br />*Anchor* | `"center"` | [grid below](#anchor-frameanchor) | **Anchor**<br />Side the output sticks to.<br />*Applies when `frameMethod` = `source` (Source) or `custom` (Custom) and `frameFit` = `none` (None (crop)) or `contain` (Contain) or `cover` (Cover).*<br />*Anchor* : Point of a 3 × 3 grid, from the top-left to the bottom-right corner. |
+
+<a name="anchor-frameanchor"></a>
+
+**Positions of `frameAnchor`**
+
+| | Left | Center | Right |
+| --- | --- | --- | --- |
+| **Top** | `top-left`<br />Top left | `top`<br />Top | `top-right`<br />Top right |
+| **Middle** | `left`<br />Left | **`center`**<br />**Center** | `right`<br />Right |
+| **Bottom** | `bottom-left`<br />Bottom left | `bottom`<br />Bottom | `bottom-right`<br />Bottom right |
+
+## Examples
+
+### cURL
+
+```bash
+curl -X POST https://api.pixlub.com/v1/modules/transform \
+  -H "X-API-Key: $PIXLUB_API_KEY" \
+  -F in=@in.png \
+  -F 'params={"x":0,"y":0,"scale":100}'
+```
+
+### JavaScript
+
+```js
+import { openAsBlob } from 'node:fs'
+
+const form = new FormData()
+form.append('in', await openAsBlob('in.png'), 'in.png')
+form.append('params', JSON.stringify({"x":0,"y":0,"scale":100}))
+
+const res = await fetch('https://api.pixlub.com/v1/modules/transform', {
+  method: 'POST',
+  headers: { 'X-API-Key': process.env.PIXLUB_API_KEY },
+  body: form,
+})
+const result = await res.json()
+const output = result.outputs.find((o) => o.key === 'out')
+const image = await fetch(output.url) // lien signé, sans clé
+```
+
+### Python
+
+```python
+import json, os, requests
+
+res = requests.post(
+    "https://api.pixlub.com/v1/modules/transform",
+    headers={"X-API-Key": os.environ["PIXLUB_API_KEY"]},
+    files=[("in", open("in.png", "rb"))],
+    data={"params": json.dumps({"x": 0, "y": 0, "scale": 100})},
+)
+res.raise_for_status()
+result = res.json()
+output = next(o for o in result["outputs"] if o["key"] == "out")
+print(output["url"])
+```
+
+### SDK Python
+
+```python
+import pixlub
+
+client = pixlub.Client()  # PIXLUB_API_KEY, PIXLUB_BASE_URL
+result = client.tools.run("transform", image="photo.png", params={"x": 0, "y": 0, "scale": 100})
+result.save(f"transform{result.extension}")
+print(result.cost, result.credits_balance)
+```
+
+### SDK Go
+
+```go
+client, err := pixlub.NewClient() // PIXLUB_API_KEY, PIXLUB_BASE_URL
+if err != nil {
+    log.Fatal(err)
+}
+result, err := client.Tools.Run(ctx, "transform", pixlub.RunRequest{
+    Image: pixlub.FromPath("photo.png"),
+    Params: map[string]any{"x": 0, "y": 0, "scale": 100},
+})
+if err != nil {
+    log.Fatal(err)
+}
+err = result.Save("transform"+result.Extension(), false)
+```
+
+## Outputs
+
+Each returned file carries its output key (`key`) in `outputs`: look it up to find the file you want rather than relying on its position.
+
+### 1 file
+
+> **1 file** : A single image in `in`.
+
+| key | Type | Formats | Description |
+| --- | --- | --- | --- |
+| `out` | `image` | `PNG` | **Image(s)**<br />Image produced by the module.<br />A single image sent: the file keeps the `out` key. |
+
+### Several files
+
+> **Several files** : Several images in `in`, up to 64: their number comes from the files sent, you do not send it.
+
+| key | Type | Formats | Description |
+| --- | --- | --- | --- |
+| `out#n` | `image` | `PNG` | **Image(s)**<br />Image produced by the module.<br />Several images sent in `in`: one file per image, under the keys `out#0`, `out#1`…, in upload order. |
+
+## Response
+
+The response lists the produced files in outputs. Each link is signed and valid for one hour, without an API key; files are deleted after 24 hours.
+
+```json
+{
+  "id": "e38dd247-5b1c-4c6e-9a0f-2f4d1a7c9b10",
+  "module": "transform",
+  "outputs": [
+    {
+      "key": "out",
+      "name": "image",
+      "url": "https://files.pixlub.com/r/e38dd247-5b1c-4c6e-9a0f-2f4d1a7c9b10_result.png?exp=1767268800&sig=…",
+      "content_type": "image/png",
+      "bytes": 184203
+    }
+  ],
+  "expires_at": "2026-01-01T12:00:00Z",
+  "credits": {
+    "cost": 1,
+    "balance": 190
+  }
+}
+```
+
+## JSON Schema
+
+The exact JSON Schema of the settings, the one the API uses to validate the params field:
+
+`GET /v1/modules/transform/schema`
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "x": {
+      "title": "X",
+      "default": 0,
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100,
+      "multipleOf": 0.1
+    },
+    "y": {
+      "title": "Y",
+      "default": 0,
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100,
+      "multipleOf": 0.1
+    },
+    "scale": {
+      "title": "Scale",
+      "default": 100,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 400,
+      "multipleOf": 0.1
+    },
+    "scaleX": {
+      "title": "X",
+      "default": 100,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 400,
+      "multipleOf": 0.1
+    },
+    "scaleY": {
+      "title": "Y",
+      "default": 100,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 400,
+      "multipleOf": 0.1
+    },
+    "rotation": {
+      "title": "Rotation",
+      "default": 0,
+      "type": "number",
+      "minimum": -360,
+      "maximum": 360,
+      "multipleOf": 0.1
+    },
+    "anchor": {
+      "title": "Axis",
+      "default": "center",
+      "type": "string",
+      "enum": [
+        "top-left",
+        "top",
+        "top-right",
+        "left",
+        "center",
+        "right",
+        "bottom-left",
+        "bottom",
+        "bottom-right"
+      ]
+    },
+    "mirror": {
+      "title": "Mirror",
+      "default": "none",
+      "type": "string",
+      "enum": [
+        "none",
+        "h",
+        "v",
+        "both"
+      ]
+    },
+    "opacity": {
+      "title": "Opacity",
+      "default": 100,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "multipleOf": 1
+    },
+    "frameMethod": {
+      "title": "Method",
+      "default": "module",
+      "type": "string",
+      "enum": [
+        "module",
+        "source",
+        "custom"
+      ]
+    },
+    "frameWidth": {
+      "title": "Width",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 16384
+    },
+    "frameHeight": {
+      "title": "Height",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 16384
+    },
+    "frameFit": {
+      "title": "Fit",
+      "default": "none",
+      "type": "string",
+      "enum": [
+        "none",
+        "contain",
+        "cover",
+        "stretch"
+      ]
+    },
+    "frameAnchor": {
+      "title": "Anchor",
+      "default": "center",
+      "type": "string",
+      "enum": [
+        "top-left",
+        "top",
+        "top-right",
+        "left",
+        "center",
+        "right",
+        "bottom-left",
+        "bottom",
+        "bottom-right"
+      ]
+    }
+  }
+}
+```
+
+## Errors
+
+Out-of-range setting, missing file, not enough credits: every refusal has its HTTP status.
