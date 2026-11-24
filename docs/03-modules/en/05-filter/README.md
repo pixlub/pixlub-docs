@@ -22,3 +22,4 @@
 | [Remove solid background](./removeBg/README.md) | Makes a single-color background (green screen, studio…) transparent, detected or picked. | [API](./removeBg/api.md) |
 | [Split RGB](./splitRgb/README.md) | Splits the image into its Red, Green and Blue channels | [API](./splitRgb/api.md) |
 | [Split transparency](./splitAlpha/README.md) | Splits the image into its color channel (opaque RGB) and its alpha channel (grayscale) | [API](./splitAlpha/api.md) |
+| [Glitter](./glitter/README.md) | Covers the image with twinkling glitter: iridescent flakes, star glints and a sweeping sheen, looping. | [API](./glitter/api.md) |

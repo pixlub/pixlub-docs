@@ -22,3 +22,4 @@
 | [Retirer un fond uni](./removeBg/README.md) | Rend transparent un fond d'une seule couleur (fond vert, studio…), détectée ou choisie. | [API](./removeBg/api.md) |
 | [Séparer RVB](./splitRgb/README.md) | Sépare l'image en ses canaux Rouge, Vert et Bleu | [API](./splitRgb/api.md) |
 | [Séparer transparence](./splitAlpha/README.md) | Sépare l'image en son canal couleur (RVB opaque) et son canal alpha (niveaux de gris) | [API](./splitAlpha/api.md) |
+| [Paillettes](./glitter/README.md) | Couvre l'image de paillettes qui scintillent : facettes irisées, étoiles et reflet, en boucle. | [API](./glitter/api.md) |

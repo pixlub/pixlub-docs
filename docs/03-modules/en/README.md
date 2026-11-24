@@ -106,6 +106,7 @@ Modules marked **API** can be called through the [API](../../02-api/en/01-gettin
 | [Remove solid background](./05-filter/removeBg/README.md) | Makes a single-color background (green screen, studio…) transparent, detected or picked. | [API](./05-filter/removeBg/api.md) |
 | [Split RGB](./05-filter/splitRgb/README.md) | Splits the image into its Red, Green and Blue channels | [API](./05-filter/splitRgb/api.md) |
 | [Split transparency](./05-filter/splitAlpha/README.md) | Splits the image into its color channel (opaque RGB) and its alpha channel (grayscale) | [API](./05-filter/splitAlpha/api.md) |
+| [Glitter](./05-filter/glitter/README.md) | Covers the image with twinkling glitter: iridescent flakes, star glints and a sweeping sheen, looping. | [API](./05-filter/glitter/api.md) |
 
 ## Composition
 
@@ -141,7 +142,7 @@ Modules marked **API** can be called through the [API](../../02-api/en/01-gettin
 | [Lens flare](./07-generate/flare/README.md) | Optical flare: core, star branches, chromatic halo and ghost reflections | — |
 | [Radial glow](./07-generate/glow/README.md) | Generates a radial glow (core, glow, aura) with falloff control | — |
 | [Lightning](./07-generate/lightning/README.md) | Generates a branching procedural lightning bolt between two points | — |
-| [Path](./07-generate/pathStroke/README.md) | Draws a hand-drawn curve, smoothed and tapered | — |
+| [Path](./07-generate/pathStroke/README.md) | Draws vector paths: pen, pencil, shapes, tapered strokes and fills | — |
 | [Particles](./07-generate/particles/README.md) | Scatters a source image (or a mix of images from a batch) into particles (emission shape, trails, falloff), driven by a seed | [API](./07-generate/particles/api.md) |
 
 ## API services

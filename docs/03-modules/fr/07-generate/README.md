@@ -15,5 +15,5 @@
 | [Lens flare](./flare/README.md) | Éclat optique : cœur, branches en étoile, halo chromatique et reflets fantômes | — |
 | [Lueur radiale](./glow/README.md) | Génère une lueur radiale (core, glow, aura) avec contrôle du falloff | — |
 | [Éclair](./lightning/README.md) | Génère un éclair procédural ramifié entre deux points | — |
-| [Tracé](./pathStroke/README.md) | Trace une courbe dessinée à la main, lissée et fuselée | — |
+| [Tracé](./pathStroke/README.md) | Dessine des tracés vectoriels : plume, crayon, formes, traits fuselés et remplissages | — |
 | [Particules](./particles/README.md) | Disperse une image source (ou un mélange d'images d'un batch) en particules (forme d'émission, traînées, atténuation), pilotées par une graine | [API](./particles/api.md) |

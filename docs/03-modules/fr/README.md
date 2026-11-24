@@ -106,6 +106,7 @@ Les modules marqués **API** s'appellent par l'[API](../../02-api/fr/01-getting-
 | [Retirer un fond uni](./05-filter/removeBg/README.md) | Rend transparent un fond d'une seule couleur (fond vert, studio…), détectée ou choisie. | [API](./05-filter/removeBg/api.md) |
 | [Séparer RVB](./05-filter/splitRgb/README.md) | Sépare l'image en ses canaux Rouge, Vert et Bleu | [API](./05-filter/splitRgb/api.md) |
 | [Séparer transparence](./05-filter/splitAlpha/README.md) | Sépare l'image en son canal couleur (RVB opaque) et son canal alpha (niveaux de gris) | [API](./05-filter/splitAlpha/api.md) |
+| [Paillettes](./05-filter/glitter/README.md) | Couvre l'image de paillettes qui scintillent : facettes irisées, étoiles et reflet, en boucle. | [API](./05-filter/glitter/api.md) |
 
 ## Composition
 
@@ -141,7 +142,7 @@ Les modules marqués **API** s'appellent par l'[API](../../02-api/fr/01-getting-
 | [Lens flare](./07-generate/flare/README.md) | Éclat optique : cœur, branches en étoile, halo chromatique et reflets fantômes | — |
 | [Lueur radiale](./07-generate/glow/README.md) | Génère une lueur radiale (core, glow, aura) avec contrôle du falloff | — |
 | [Éclair](./07-generate/lightning/README.md) | Génère un éclair procédural ramifié entre deux points | — |
-| [Tracé](./07-generate/pathStroke/README.md) | Trace une courbe dessinée à la main, lissée et fuselée | — |
+| [Tracé](./07-generate/pathStroke/README.md) | Dessine des tracés vectoriels : plume, crayon, formes, traits fuselés et remplissages | — |
 | [Particules](./07-generate/particles/README.md) | Disperse une image source (ou un mélange d'images d'un batch) en particules (forme d'émission, traînées, atténuation), pilotées par une graine | [API](./07-generate/particles/api.md) |
 
 ## Services API

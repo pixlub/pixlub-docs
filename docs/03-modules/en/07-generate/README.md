@@ -15,5 +15,5 @@
 | [Lens flare](./flare/README.md) | Optical flare: core, star branches, chromatic halo and ghost reflections | — |
 | [Radial glow](./glow/README.md) | Generates a radial glow (core, glow, aura) with falloff control | — |
 | [Lightning](./lightning/README.md) | Generates a branching procedural lightning bolt between two points | — |
-| [Path](./pathStroke/README.md) | Draws a hand-drawn curve, smoothed and tapered | — |
+| [Path](./pathStroke/README.md) | Draws vector paths: pen, pencil, shapes, tapered strokes and fills | — |
 | [Particles](./particles/README.md) | Scatters a source image (or a mix of images from a batch) into particles (emission shape, trails, falloff), driven by a seed | [API](./particles/api.md) |
