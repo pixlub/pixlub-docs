@@ -136,7 +136,7 @@ Modules marked **API** can be called through the [API](../../02-api/en/01-gettin
 | [Palette from gradient](./07-generate/paletteFromGradient/README.md) | Samples a gradient into a fixed number of colors | — |
 | [Palette from image](./07-generate/paletteFromImage/README.md) | Extracts the dominant colors of an image (median cut) | [API](./07-generate/paletteFromImage/api.md) |
 | [3D model](./07-generate/model3d/README.md) | Imports a 3D model (GLB, GLTF, OBJ, FBX, STL): camera, materials and animation. To be merged onto an image with “3D model merge”. | — |
-| [Material](./07-generate/material/README.md) | Builds a 3D material: physical surface and one texture per map (color, normals, roughness…). To be linked to a material of the “3D model” module. | — |
+| [Material](./07-generate/material/README.md) | Builds a 3D material: shading model (Standard, unlit, toon, matcap, tessellation), surface, one texture per map and effects. The same material as in the 3D editor; to be linked to a material of the “3D model” module. | — |
 | [Pattern](./07-generate/checker/README.md) | Generates a repeating pattern: checkerboard, grid, dots, stripes, bricks, honeycomb | — |
 | [Gradient](./07-generate/gradient/README.md) | Generates a linear, circular, radial or diamond gradient | — |
 | [QR code](./07-generate/qrcode/README.md) | Generates a QR code any reader can scan (link, Wi-Fi, contact…), styled, with a logo, or blended into an image | [API](./07-generate/qrcode/api.md) |

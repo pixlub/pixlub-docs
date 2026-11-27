@@ -1,6 +1,6 @@
 # Material
 
-Builds a 3D material: physical surface and one texture per map (color, normals, roughness…). To be linked to a material of the “3D model” module.
+Builds a 3D material: shading model (Standard, unlit, toon, matcap, tessellation), surface, one texture per map and effects. The same material as in the 3D editor; to be linked to a material of the “3D model” module.
 
 **Category** : Generation · **Identifier** : `material`
 

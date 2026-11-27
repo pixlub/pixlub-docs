@@ -9,7 +9,7 @@
 | [Paleta a partir de un degradado](./paletteFromGradient/README.md) | Muestrea un degradado en un número fijo de colores | — |
 | [Paleta a partir de una imagen](./paletteFromImage/README.md) | Extrae los colores dominantes de una imagen (median cut) | [API](./paletteFromImage/api.md) |
 | [Modelo 3D](./model3d/README.md) | Importa un modelo 3D (GLB, GLTF, OBJ, FBX, STL): cámara, materiales y animación. Para fusionarlo sobre una imagen, use «Fusión de modelo 3D». | — |
-| [Material](./material/README.md) | Compone un material 3D: superficie física y una textura por mapa (color, normales, rugosidad…). Para enlazar con un material del módulo «Modelo 3D». | — |
+| [Material](./material/README.md) | Compone un material 3D: tipo de render (Estándar, sin iluminación, dibujo animado, matcap, teselación), superficie, una textura por mapa y efectos. El mismo material que en el editor 3D; para enlazar con un material del módulo «Modelo 3D». | — |
 | [Motivo](./checker/README.md) | Genera un motivo repetido: tablero de ajedrez, cuadrícula, puntos, rayas, ladrillos, panal | — |
 | [Degradado](./gradient/README.md) | Genera un degradado lineal, circular, radial o en rombo | — |
 | [Código QR](./qrcode/README.md) | Genera un código QR legible por cualquier lector (enlace, wifi, contacto…), con estilo, con logotipo o fundido en una imagen | [API](./qrcode/api.md) |

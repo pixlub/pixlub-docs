@@ -1,6 +1,6 @@
 # Material
 
-Compone un material 3D: superficie física y una textura por mapa (color, normales, rugosidad…). Para enlazar con un material del módulo «Modelo 3D».
+Compone un material 3D: tipo de render (Estándar, sin iluminación, dibujo animado, matcap, teselación), superficie, una textura por mapa y efectos. El mismo material que en el editor 3D; para enlazar con un material del módulo «Modelo 3D».
 
 **Categoría** : Generación · **Identificador** : `material`
 

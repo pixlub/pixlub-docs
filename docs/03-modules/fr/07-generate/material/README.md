@@ -1,6 +1,6 @@
 # Matériau
 
-Compose un matériau 3D : surface physique et une texture par carte (couleur, normales, rugosité…). À relier à un matériau du module « Modèle 3D ».
+Compose un matériau 3D : type de rendu (Standard, sans éclairage, dessin animé, matcap, tessellation), surface, une texture par carte et des effets. Le même matériau que dans l’éditeur 3D ; à relier à un matériau du module « Modèle 3D ».
 
 **Catégorie** : Génération · **Identifiant** : `material`
 

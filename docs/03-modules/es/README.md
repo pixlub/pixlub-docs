@@ -136,7 +136,7 @@ Los módulos marcados **API** se llaman mediante la [API](../../02-api/es/01-get
 | [Paleta a partir de un degradado](./07-generate/paletteFromGradient/README.md) | Muestrea un degradado en un número fijo de colores | — |
 | [Paleta a partir de una imagen](./07-generate/paletteFromImage/README.md) | Extrae los colores dominantes de una imagen (median cut) | [API](./07-generate/paletteFromImage/api.md) |
 | [Modelo 3D](./07-generate/model3d/README.md) | Importa un modelo 3D (GLB, GLTF, OBJ, FBX, STL): cámara, materiales y animación. Para fusionarlo sobre una imagen, use «Fusión de modelo 3D». | — |
-| [Material](./07-generate/material/README.md) | Compone un material 3D: superficie física y una textura por mapa (color, normales, rugosidad…). Para enlazar con un material del módulo «Modelo 3D». | — |
+| [Material](./07-generate/material/README.md) | Compone un material 3D: tipo de render (Estándar, sin iluminación, dibujo animado, matcap, teselación), superficie, una textura por mapa y efectos. El mismo material que en el editor 3D; para enlazar con un material del módulo «Modelo 3D». | — |
 | [Motivo](./07-generate/checker/README.md) | Genera un motivo repetido: tablero de ajedrez, cuadrícula, puntos, rayas, ladrillos, panal | — |
 | [Degradado](./07-generate/gradient/README.md) | Genera un degradado lineal, circular, radial o en rombo | — |
 | [Código QR](./07-generate/qrcode/README.md) | Genera un código QR legible por cualquier lector (enlace, wifi, contacto…), con estilo, con logotipo o fundido en una imagen | [API](./07-generate/qrcode/api.md) |
