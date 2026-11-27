@@ -9,6 +9,7 @@
 | [Palette from gradient](./paletteFromGradient/README.md) | Samples a gradient into a fixed number of colors | — |
 | [Palette from image](./paletteFromImage/README.md) | Extracts the dominant colors of an image (median cut) | [API](./paletteFromImage/api.md) |
 | [3D model](./model3d/README.md) | Imports a 3D model (GLB, GLTF, OBJ, FBX, STL): camera, materials and animation. To be merged onto an image with “3D model merge”. | — |
+| [Material](./material/README.md) | Builds a 3D material: physical surface and one texture per map (color, normals, roughness…). To be linked to a material of the “3D model” module. | — |
 | [Pattern](./checker/README.md) | Generates a repeating pattern: checkerboard, grid, dots, stripes, bricks, honeycomb | — |
 | [Gradient](./gradient/README.md) | Generates a linear, circular, radial or diamond gradient | — |
 | [QR code](./qrcode/README.md) | Generates a QR code any reader can scan (link, Wi-Fi, contact…), styled, with a logo, or blended into an image | [API](./qrcode/api.md) |

@@ -136,6 +136,7 @@ Les modules marqués **API** s'appellent par l'[API](../../02-api/fr/01-getting-
 | [Palette depuis dégradé](./07-generate/paletteFromGradient/README.md) | Échantillonne un dégradé en un nombre fixe de couleurs | — |
 | [Palette depuis image](./07-generate/paletteFromImage/README.md) | Extrait les couleurs dominantes d'une image (median cut) | [API](./07-generate/paletteFromImage/api.md) |
 | [Modèle 3D](./07-generate/model3d/README.md) | Importe un modèle 3D (GLB, GLTF, OBJ, FBX, STL) : caméra, matériaux et animation. À fusionner sur une image via « Fusion Modèle 3D ». | — |
+| [Matériau](./07-generate/material/README.md) | Compose un matériau 3D : surface physique et une texture par carte (couleur, normales, rugosité…). À relier à un matériau du module « Modèle 3D ». | — |
 | [Motif](./07-generate/checker/README.md) | Génère un motif répété : damier, grille, points, rayures, briques, nid d'abeille | — |
 | [Dégradé](./07-generate/gradient/README.md) | Génère un dégradé linéaire, circulaire, radial ou en losange | — |
 | [QR code](./07-generate/qrcode/README.md) | Génère un QR code lisible par tout lecteur (lien, Wi-Fi, contact…), stylé, avec logo, ou fondu dans une image | [API](./07-generate/qrcode/api.md) |
